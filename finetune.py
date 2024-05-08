@@ -82,7 +82,8 @@ def main():
     model = WhisperForConditionalGeneration.from_pretrained(args.base_model,
                                                             load_in_8bit=args.use_8bit,
                                                             device_map=device_map,
-                                                            local_files_only=args.local_files_only)
+                                                            local_files_only=args.local_files_only,
+                                                            force_download=True)
     model.config.forced_decoder_ids = None
     model.generation_config.language = "en"
     model.generation_config.task = "transcribe"
