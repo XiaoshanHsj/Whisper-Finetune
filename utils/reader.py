@@ -37,7 +37,7 @@ class CustomDataset(Dataset):
             augment_config_path: 数据增强配置参数文件路径
         """
         super(CustomDataset, self).__init__()
-        assert min_duration >= 0.5, f"min_duration不能小于0.5，当前为：{min_duration}"
+        assert min_duration >= 0.1, f"min_duration不能小于0.1，当前为：{min_duration}"
         assert max_duration <= 30, f"max_duration不能大于30，当前为：{max_duration}"
         self.data_list_path = data_list_path
         self.processor = processor
