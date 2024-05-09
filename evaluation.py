@@ -89,6 +89,8 @@ def main():
                 if args.to_simple:
                     decoded_preds = to_simple(decoded_preds)
                     decoded_labels = to_simple(decoded_labels)
+                decoded_preds = [decoded_pred.upper() for decoded_pred in decoded_preds]
+                decoded_labels = [decoded_label.upper() for decoded_label in decoded_labels]
                 metric.add_batch(predictions=decoded_preds, references=decoded_labels)
         # 删除计算的记录
         del generated_tokens, labels, batch
