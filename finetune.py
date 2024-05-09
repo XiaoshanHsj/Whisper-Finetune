@@ -112,7 +112,7 @@ def main():
 
     if args.base_model.endswith("/"):
         args.base_model = args.base_model[:-1]
-    output_dir = os.path.join(args.output_dir, os.path.basename(args.base_model))
+    output_dir = os.path.join(args.output_dir, os.path.basename(args.base_model) + "_" +str(args.learning_rate))
 
     wer_metric = load_metric("wer")
 
